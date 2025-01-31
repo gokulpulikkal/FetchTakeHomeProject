@@ -9,6 +9,8 @@ import Foundation
 import Testing
 @testable import FetchTakeHomeProject
 
+@MainActor
+@Suite(.serialized) /// All the tests should be serialized as the handler is not thread safe
 struct RecipesRepositoryTests {
 
     private let recipesRepository: RecipesRepositoryProtocol
