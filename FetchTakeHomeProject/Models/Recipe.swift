@@ -7,18 +7,18 @@
 
 import Foundation
 
-struct Recipe: Identifiable, Decodable {
+struct Recipe: Identifiable, Decodable, Equatable {
     var id: String {
         uuid
     }
 
     let cuisine: String
     let name: String
-    let photoURLLarge: String
-    let photoURLSmall: String
-    let sourceURL: String
+    let photoURLLarge: String?
+    let photoURLSmall: String?
+    let sourceURL: String?
     let uuid: String
-    let youtubeURL: String
+    let youtubeURL: String?
 
     enum CodingKeys: String, CodingKey {
         case cuisine
