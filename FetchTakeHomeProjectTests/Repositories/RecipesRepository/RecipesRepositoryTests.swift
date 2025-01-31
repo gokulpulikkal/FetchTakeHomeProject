@@ -9,14 +9,14 @@ import Foundation
 import Testing
 @testable import FetchTakeHomeProject
 
-@MainActor
-@Suite(.serialized) /// All the tests should be serialized as the handler is not thread safe
+@Suite(.serialized) /// All the tests should be serialized as the handler is not thread safe. added for extra safety.
 struct RecipesRepositoryTests {
 
     private let recipesRepository: RecipesRepositoryProtocol
     private let httpClientMock: HTTPClientMock
 
     init() {
+        print("init happening in RecipesRepositoryTests")
         self.httpClientMock = HTTPClientMock()
         self.recipesRepository = RecipesRepository(httpClient: httpClientMock)
     }
