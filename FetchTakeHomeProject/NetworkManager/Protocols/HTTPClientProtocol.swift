@@ -8,7 +8,7 @@
 import Foundation
 
 /// A protocol for the types that manages the API requests
-protocol HTTPClientProtocol {
+protocol HTTPClientProtocol: Sendable {
 
     /// function declaration that makes the API call and returns the Data
     func httpData(from requestData: RequestDataProtocol) async throws -> Data

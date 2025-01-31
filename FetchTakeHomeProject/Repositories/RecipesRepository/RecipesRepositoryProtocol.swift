@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol RecipesRepositoryProtocol {
+protocol RecipesRepositoryProtocol: Sendable {
     func getRecipesList() async throws -> [Recipe]
 }

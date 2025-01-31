@@ -10,11 +10,11 @@ import Foundation
 // MARK: - URLSession + HTTPClientProtocol
 
 /// The client that can be used for API calls and any network related calls
-class HTTPClient: HTTPClientProtocol {
+final class HTTPClient: HTTPClientProtocol {
     // MARK: Properties
 
     /// URL session to be used for the API call
-    var session: URLSession
+    let session: URLSession
 
     // MARK: Initializer
 

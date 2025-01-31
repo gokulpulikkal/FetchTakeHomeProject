@@ -7,7 +7,7 @@
 
 import Foundation
 
-class RecipesRepository: RecipesRepositoryProtocol {
+final class RecipesRepository: RecipesRepositoryProtocol {
 
     let httpClient: HTTPClientProtocol
 
