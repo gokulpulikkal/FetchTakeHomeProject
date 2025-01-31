@@ -29,9 +29,24 @@
 		4B8852772D4C31EC00C4BA60 /* FetchTakeHomeProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchTakeHomeProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		4B8853852D4C7B0D00C4BA60 /* Exceptions for "FetchTakeHomeProject" folder in "FetchTakeHomeProjectTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resources/JSON/RecipesList.json,
+				Resources/JSON/RecipesListEmpty.json,
+				Resources/JSON/RecipesListMalformed.json,
+			);
+			target = 4B88526C2D4C31EC00C4BA60 /* FetchTakeHomeProjectTests */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4B88525F2D4C31EB00C4BA60 /* FetchTakeHomeProject */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4B8853852D4C7B0D00C4BA60 /* Exceptions for "FetchTakeHomeProject" folder in "FetchTakeHomeProjectTests" target */,
+			);
 			path = FetchTakeHomeProject;
 			sourceTree = "<group>";
 		};

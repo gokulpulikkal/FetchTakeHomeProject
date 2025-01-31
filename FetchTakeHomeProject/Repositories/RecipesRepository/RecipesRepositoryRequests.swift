@@ -1,5 +1,5 @@
 //
-//  RecipeRequestData.swift
+//  RecipesRepositoryRequests.swift
 //  FetchTakeHomeProject
 //
 //  Created by Gokul P on 1/30/25.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum RecipeRequestData: RequestDataProtocol {
+enum RecipesRepositoryRequests: RequestDataProtocol {
 
     case allRecipes
 
@@ -31,5 +31,4 @@ enum RecipeRequestData: RequestDataProtocol {
             "d3jbb8n5wk0qxi.cloudfront.net"
         }
     }
-
 }

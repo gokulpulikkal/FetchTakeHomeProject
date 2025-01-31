@@ -10,11 +10,6 @@ import SwiftUI
 struct HomeScreen: View {
     var body: some View {
         Text("Hello, World!")
-            .task {
-                let apiClient = HTTPClient()
-                let data = try? await apiClient.httpData(from: RecipeRequestData.allRecipes)
-                print(data)
-            }
     }
 
 }

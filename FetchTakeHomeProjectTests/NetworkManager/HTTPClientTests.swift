@@ -12,7 +12,7 @@ import Testing
 @Suite(.serialized) // For preventing the data race condition that can happen on URLProtocolMock
 struct HTTPClientTests {
 
-    let httpClient: HTTPClientProtocol
+    private let httpClient: HTTPClientProtocol
 
     init() {
         let config = URLSessionConfiguration.ephemeral
