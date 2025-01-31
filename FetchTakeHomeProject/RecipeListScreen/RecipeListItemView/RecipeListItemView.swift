@@ -18,6 +18,12 @@ struct RecipeListItemView: View {
         }
         .frame(height: 160)
         .padding(.trailing)
+        .onAppear {
+            print("Appearing \(recipe.name)")
+        }
+        .onDisappear {
+            print("Disappearing \(recipe.name)")
+        }
     }
 }
 
@@ -26,12 +32,14 @@ extension RecipeListItemView {
     var recipeImageView: some View {
         if let url = recipe.photoURLSmall {
             AsyncImage(url: URL(string: url)) { image in
-                image.resizable()
+                image
+                    .resizable()
+                    .scaledToFit()
             } placeholder: {
                 ProgressView()
             }
         } else {
-            ProgressView()
+            Image(systemName: "exclamationmark.triangle.fill")
         }
     }
 

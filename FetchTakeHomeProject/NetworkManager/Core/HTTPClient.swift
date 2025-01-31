@@ -14,7 +14,7 @@ final class HTTPClient: HTTPClientProtocol {
     // MARK: Properties
 
     /// URL session to be used for the API call
-    let session: URLSession
+    private let session: URLSession
 
     // MARK: Initializer
 
