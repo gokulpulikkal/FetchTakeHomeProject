@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkLayer
 @testable import FetchTakeHomeProject
 
 /// Recipe repository mock. Only to be used in testing. It is marked unchecked sendable as the handler is not thread

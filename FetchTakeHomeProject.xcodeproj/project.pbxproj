@@ -6,6 +6,10 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4BAFD9932D4EACA600E5A84E /* NetworkLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 4BAFD9922D4EACA600E5A84E /* NetworkLayer */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		4B88526E2D4C31EC00C4BA60 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -30,9 +34,22 @@
 		4B8854B62D4D45FA00C4BA60 /* FetchTakeHomeProject.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = FetchTakeHomeProject.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		4BAFD9952D4EACE800E5A84E /* Exceptions for "FetchTakeHomeProject" folder in "FetchTakeHomeProject" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Packages/NetworkLayer,
+			);
+			target = 4B88525C2D4C31EB00C4BA60 /* FetchTakeHomeProject */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4B88525F2D4C31EB00C4BA60 /* FetchTakeHomeProject */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4BAFD9952D4EACE800E5A84E /* Exceptions for "FetchTakeHomeProject" folder in "FetchTakeHomeProject" target */,
+			);
 			path = FetchTakeHomeProject;
 			sourceTree = "<group>";
 		};
@@ -53,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BAFD9932D4EACA600E5A84E /* NetworkLayer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -114,6 +132,7 @@
 			);
 			name = FetchTakeHomeProject;
 			packageProductDependencies = (
+				4BAFD9922D4EACA600E5A84E /* NetworkLayer */,
 			);
 			productName = FetchTakeHomeProject;
 			productReference = 4B88525D2D4C31EB00C4BA60 /* FetchTakeHomeProject.app */;
@@ -197,6 +216,8 @@
 			);
 			mainGroup = 4B8852542D4C31EB00C4BA60;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4B88525E2D4C31EB00C4BA60 /* Products */;
 			projectDirPath = "";
@@ -562,6 +583,13 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4BAFD9922D4EACA600E5A84E /* NetworkLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkLayer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4B8852552D4C31EB00C4BA60 /* Project object */;
 }
