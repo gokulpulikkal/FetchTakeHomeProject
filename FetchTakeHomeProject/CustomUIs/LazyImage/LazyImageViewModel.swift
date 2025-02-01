@@ -5,6 +5,7 @@
 //  Created by Gokul P on 1/31/25.
 //
 
+import Core
 import Foundation
 import Observation
 import SwiftUI
