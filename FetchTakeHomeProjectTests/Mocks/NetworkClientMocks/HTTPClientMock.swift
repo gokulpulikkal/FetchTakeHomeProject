@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import NetworkLayer
 @testable import FetchTakeHomeProject
 
 /// Mock class to be used for mocking HTTP Client

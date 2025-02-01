@@ -6,6 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		4B47728A2D4EB99A00FADDF9 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 4B4772892D4EB99A00FADDF9 /* Core */; };
+		4B4774112D4EC81C00FADDF9 /* CustomUIs in Frameworks */ = {isa = PBXBuildFile; productRef = 4B4774102D4EC81C00FADDF9 /* CustomUIs */; };
+		4BAFD9932D4EACA600E5A84E /* NetworkLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 4BAFD9922D4EACA600E5A84E /* NetworkLayer */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		4B88526E2D4C31EC00C4BA60 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -30,9 +36,24 @@
 		4B8854B62D4D45FA00C4BA60 /* FetchTakeHomeProject.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = FetchTakeHomeProject.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		4BAFD9952D4EACE800E5A84E /* Exceptions for "FetchTakeHomeProject" folder in "FetchTakeHomeProject" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Packages/Core,
+				Packages/CustomUIs,
+				Packages/NetworkLayer,
+			);
+			target = 4B88525C2D4C31EB00C4BA60 /* FetchTakeHomeProject */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4B88525F2D4C31EB00C4BA60 /* FetchTakeHomeProject */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				4BAFD9952D4EACE800E5A84E /* Exceptions for "FetchTakeHomeProject" folder in "FetchTakeHomeProject" target */,
+			);
 			path = FetchTakeHomeProject;
 			sourceTree = "<group>";
 		};
@@ -53,6 +74,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4BAFD9932D4EACA600E5A84E /* NetworkLayer in Frameworks */,
+				4B4774112D4EC81C00FADDF9 /* CustomUIs in Frameworks */,
+				4B47728A2D4EB99A00FADDF9 /* Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +97,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B4772882D4EB99A00FADDF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4B8852542D4C31EB00C4BA60 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +111,7 @@
 				4B88525F2D4C31EB00C4BA60 /* FetchTakeHomeProject */,
 				4B8852702D4C31EC00C4BA60 /* FetchTakeHomeProjectTests */,
 				4B88527A2D4C31EC00C4BA60 /* FetchTakeHomeProjectUITests */,
+				4B4772882D4EB99A00FADDF9 /* Frameworks */,
 				4B88525E2D4C31EB00C4BA60 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -114,6 +146,9 @@
 			);
 			name = FetchTakeHomeProject;
 			packageProductDependencies = (
+				4BAFD9922D4EACA600E5A84E /* NetworkLayer */,
+				4B4772892D4EB99A00FADDF9 /* Core */,
+				4B4774102D4EC81C00FADDF9 /* CustomUIs */,
 			);
 			productName = FetchTakeHomeProject;
 			productReference = 4B88525D2D4C31EB00C4BA60 /* FetchTakeHomeProject.app */;
@@ -197,6 +232,8 @@
 			);
 			mainGroup = 4B8852542D4C31EB00C4BA60;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 4B88525E2D4C31EB00C4BA60 /* Products */;
 			projectDirPath = "";
@@ -562,6 +599,21 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4B4772892D4EB99A00FADDF9 /* Core */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Core;
+		};
+		4B4774102D4EC81C00FADDF9 /* CustomUIs */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CustomUIs;
+		};
+		4BAFD9922D4EACA600E5A84E /* NetworkLayer */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = NetworkLayer;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4B8852552D4C31EB00C4BA60 /* Project object */;
 }

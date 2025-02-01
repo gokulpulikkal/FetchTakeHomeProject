@@ -57,6 +57,36 @@
                ReferencedContainer = "container:FetchTakeHomeProject.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CoreTests"
+               BuildableName = "CoreTests"
+               BlueprintName = "CoreTests"
+               ReferencedContainer = "container:FetchTakeHomeProject/Packages/Core">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CustomUIsTests"
+               BuildableName = "CustomUIsTests"
+               BlueprintName = "CustomUIsTests"
+               ReferencedContainer = "container:FetchTakeHomeProject/Packages/CustomUIs">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "NetworkLayerTests"
+               BuildableName = "NetworkLayerTests"
+               BlueprintName = "NetworkLayerTests"
+               ReferencedContainer = "container:FetchTakeHomeProject/Packages/NetworkLayer">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
