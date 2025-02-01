@@ -27,12 +27,6 @@ struct RecipeListItemView: View {
         }
         .frame(height: 160)
         .padding(.trailing)
-        .onAppear {
-            print("Appearing \(recipe.name)")
-        }
-        .onDisappear {
-            print("Disappearing \(recipe.name)")
-        }
     }
 }
 

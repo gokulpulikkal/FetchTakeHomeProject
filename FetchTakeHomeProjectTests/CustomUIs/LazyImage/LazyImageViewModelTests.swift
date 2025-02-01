@@ -31,11 +31,7 @@ final class LazyImageViewModelTests: XCTestCase {
         super.tearDown()
     }
 
-    private func areDataEqual(_ image1: UIImage, isEqualTo image2: UIImage) -> Bool {
-        let data1: NSData = image1.pngData()! as NSData
-        let data2: NSData = image2.pngData()! as NSData
-        return data1.isEqual(data2)
-    }
+    
 
     func testImageLoadingFirstTime() async throws {
         XCTAssert(viewModel.loadStatus == .loading)
@@ -54,7 +50,7 @@ final class LazyImageViewModelTests: XCTestCase {
         await fulfillment(of: [expectation], timeout: 2.0)
 
         if case let .loaded(loadedUIImage) = viewModel.loadStatus {
-            XCTAssertTrue(areDataEqual(loadedUIImage, isEqualTo: UIImage(data: testImageData)!))
+            XCTAssertTrue(loadedUIImage.isDataEqual(to: UIImage(data: testImageData)!))
         } else {
             XCTFail("Expected loaded status with image")
         }
@@ -72,7 +68,7 @@ final class LazyImageViewModelTests: XCTestCase {
         await viewModel.loadImage(url: testURL)
 
         if case let .loaded(loadedUIImage) = viewModel.loadStatus {
-            XCTAssertTrue(areDataEqual(loadedUIImage, isEqualTo: UIImage(data: testImageData)!))
+            XCTAssertTrue(loadedUIImage.isDataEqual(to: UIImage(data: testImageData)!))
         } else {
             XCTFail("Expected loaded status with image")
         }
@@ -84,7 +80,8 @@ final class LazyImageViewModelTests: XCTestCase {
         await viewModel.loadImage(url: testURL)
         await fulfillment(of: [expectation])
         if case let .loaded(loadedUIImage) = viewModel.loadStatus {
-            XCTAssertTrue(areDataEqual(loadedUIImage, isEqualTo: UIImage(data: testImageData)!))
+            XCTAssertTrue(loadedUIImage.isDataEqual(to: UIImage(data: testImageData)!))
+            
         } else {
             XCTFail("Expected loaded status with image")
         }

@@ -9,9 +9,19 @@ import SwiftUI
 
 @main
 struct FetchTakeHomeProjectApp: App {
+
+    @Environment(\.scenePhase) var scenePhase
+
     var body: some Scene {
         WindowGroup {
             RecipeListScreen()
+                .onChange(of: scenePhase) { _, newPhase in
+                    if newPhase == .background {
+                        Task {
+                            await ImageCache.shared.clearCache()
+                        }
+                    }
+                }
         }
     }
 }

@@ -12,6 +12,8 @@ import Foundation
 /// synchronously
 class FileDownloaderMock: @unchecked Sendable, DownloaderProtocol {
 
+    /// Added purely for the testing purpose
+    /// used when there is need of checking that the image is coming from downloader
     var handler: (() -> Data)?
 
     func download(_ url: URL) async throws -> Data {

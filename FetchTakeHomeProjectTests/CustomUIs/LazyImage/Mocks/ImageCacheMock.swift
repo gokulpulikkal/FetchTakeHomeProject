@@ -12,8 +12,9 @@ import UIKit
 actor ImageCacheMock: ImageCacheProtocol {
 
     private var cache: [String: UIImage] = [:]
-    
+
     /// Added purely for the testing purpose
+    /// used when there is need of checking that the image is coming from cache
     nonisolated(unsafe) var handler: (() -> Void)?
 
     func getImage(forKey key: String) async -> UIImage? {
@@ -27,5 +28,9 @@ actor ImageCacheMock: ImageCacheProtocol {
 
     func setImage(_ image: UIImage, forKey key: String) async {
         cache[key] = image
+    }
+
+    func clearCache() async {
+        cache = [:]
     }
 }
