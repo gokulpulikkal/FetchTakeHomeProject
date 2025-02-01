@@ -7,6 +7,13 @@
 
 import Foundation
 
+/// A type that lists possible Download errors
 enum DownloadErrors: Error {
-    case noResponse
+
+    /// download was not successful
+    case downloadUnsuccessful
+    /// the provided url is not valid
+    case invalidURL
+    /// downloaded file couldn't decoded successfully
+    case decodeError
 }

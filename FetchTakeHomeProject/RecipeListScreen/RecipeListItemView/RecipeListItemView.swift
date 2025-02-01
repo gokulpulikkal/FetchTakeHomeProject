@@ -31,13 +31,17 @@ extension RecipeListItemView {
     @ViewBuilder
     var recipeImageView: some View {
         if let url = recipe.photoURLSmall {
-            AsyncImage(url: URL(string: url)) { image in
-                image
-                    .resizable()
-                    .scaledToFit()
-            } placeholder: {
-                ProgressView()
-            }
+            LazyImage(
+                url: url,
+                content: { image in
+                    image
+                        .resizable()
+                        .scaledToFit()
+                },
+                placeholder: {
+                    ProgressView()
+                }
+            )
         } else {
             Image(systemName: "exclamationmark.triangle.fill")
         }

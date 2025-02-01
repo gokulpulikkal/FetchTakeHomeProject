@@ -21,8 +21,8 @@ final class FileDownloader: DownloaderProtocol {
     // MARK: - Methods
 
     func download(_ url: URL) async throws -> Data {
-        guard let (data, response) = try await session.data(from: url) as? (Data, HTTPURLResponse) else {
-            throw DownloadErrors.noResponse
+        guard let (data, _) = try await session.data(from: url) as? (Data, HTTPURLResponse) else {
+            throw DownloadErrors.downloadUnsuccessful
         }
         return data
     }

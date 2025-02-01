@@ -97,7 +97,11 @@ final class LazyImageViewModelTests: XCTestCase {
         
         await viewModel.loadImage(url: testURL)
         
-        XCTAssertTrue(viewModel.loadStatus == .failed(DownloadErrors.noResponse))
+        if case let .failed(errorThrown) = viewModel.loadStatus {
+            XCTAssertTrue(errorThrown as? DownloadErrors == DownloadErrors.downloadUnsuccessful)
+        } else {
+            XCTFail("Expected loaded status with image")
+        }
     }
     
 
