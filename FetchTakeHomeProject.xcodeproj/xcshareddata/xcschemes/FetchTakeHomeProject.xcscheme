@@ -87,6 +87,36 @@
                ReferencedContainer = "container:FetchTakeHomeProject/Packages/NetworkLayer">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CoreTests"
+               BuildableName = "CoreTests"
+               BlueprintName = "CoreTests"
+               ReferencedContainer = "container:Packages/Core">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "CustomUIsTests"
+               BuildableName = "CustomUIsTests"
+               BlueprintName = "CustomUIsTests"
+               ReferencedContainer = "container:Packages/CustomUIs">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "NetworkLayerTests"
+               BuildableName = "NetworkLayerTests"
+               BlueprintName = "NetworkLayerTests"
+               ReferencedContainer = "container:Packages/NetworkLayer">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
