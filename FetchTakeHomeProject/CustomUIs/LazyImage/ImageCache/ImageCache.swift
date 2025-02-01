@@ -35,8 +35,15 @@ actor ImageCache: ImageCacheProtocol {
     ///  - Returns:
     ///     - UIImage if the image data is found in the cache
     func getImage(forKey key: String) async -> UIImage? {
-        if let data = try? await fileManager.getData(forKey: key), let image = UIImage(data: data) {
-            return image
+        do {
+            let data = try await fileManager.getData(forKey: key)
+            if let image = UIImage(data: data) {
+                return image
+            }
+        } catch {
+            #if DEBUG
+            print("Image does not exists in cache")
+            #endif
         }
         return nil
     }
