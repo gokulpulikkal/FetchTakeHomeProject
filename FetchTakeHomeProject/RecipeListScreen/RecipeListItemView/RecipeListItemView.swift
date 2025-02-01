@@ -7,8 +7,17 @@
 
 import SwiftUI
 
+@MainActor
+/// A view that will be used as a single item in the list view that shows a list of recipes
 struct RecipeListItemView: View {
+
+    // MARK: Properties
+
+    /// The recipe for which the view is showing details for
     let recipe: Recipe
+
+    // MARK: Body
+
     var body: some View {
         HStack(spacing: 15) {
             recipeImageView
@@ -28,6 +37,9 @@ struct RecipeListItemView: View {
 }
 
 extension RecipeListItemView {
+
+    // MARK: Sub View
+
     @ViewBuilder
     var recipeImageView: some View {
         if let url = recipe.photoURLSmall {

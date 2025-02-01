@@ -7,9 +7,16 @@
 
 import SwiftUI
 
+@MainActor
+/// A view that will show a list of recipes
 struct RecipeListScreen: View {
 
+    // MARK: - Properties
+
+    /// view model of the view.
     @State var viewModel = ViewModel()
+
+    // MARK: - Body
 
     var body: some View {
         NavigationStack {
