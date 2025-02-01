@@ -23,27 +23,6 @@
         "identifier" : "4B88526C2D4C31EC00C4BA60",
         "name" : "FetchTakeHomeProjectTests"
       }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:FetchTakeHomeProject\/Packages\/Core",
-        "identifier" : "CoreTests",
-        "name" : "CoreTests"
-      }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:FetchTakeHomeProject\/Packages\/CustomUIs",
-        "identifier" : "CustomUIsTests",
-        "name" : "CustomUIsTests"
-      }
-    },
-    {
-      "target" : {
-        "containerPath" : "container:FetchTakeHomeProject\/Packages\/NetworkLayer",
-        "identifier" : "NetworkLayerTests",
-        "name" : "NetworkLayerTests"
-      }
     }
   ],
   "version" : 1
