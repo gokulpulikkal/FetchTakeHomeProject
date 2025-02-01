@@ -7,18 +7,29 @@
 
 import Foundation
 
+/// An actor implementation of File manager protocol using OS file manager
 actor FileManagerInterface: FileManagerProtocol {
 
-    static let shared = FileManagerInterface()
+    // MARK: - Properties
 
+    /// OS File manager instance
     private let fileManager = FileManager.default
+
+    /// Cache directory URL to which all the cached files are writing to
     private let cacheDirectory: URL
 
-    private init() {
+    // MARK: - Initializer
+
+    init() {
         let paths = fileManager.urls(for: .cachesDirectory, in: .userDomainMask)
         self.cacheDirectory = paths[0].appendingPathComponent("ImageCache")
     }
 
+    // MARK: - Methods
+
+    /// A function that will try to read data from the file system for the given key parameter
+    /// The key is encoded before using as file name to search for. This is done as the key can be long or contains some
+    /// characters not suited for using as file name
     func getData(forKey key: String) async throws -> Data {
         guard let safeFileName = key.data(using: .utf8)?.base64EncodedString() else {
             throw FileManagerErrors.fileReadFailed
@@ -32,6 +43,9 @@ actor FileManagerInterface: FileManagerProtocol {
         }
     }
 
+    /// A function that will try to writes data to the file system for the given key parameter
+    /// The key is encoded before using as file name to write for. This is done as the key can be long or contains some
+    /// characters not suited for using as file name
     func setData(_ data: Data, forKey key: String) async throws {
         guard let safeFileName = key.data(using: .utf8)?.base64EncodedString() else {
             throw FileManagerErrors.fileWriteFailed
@@ -48,6 +62,7 @@ actor FileManagerInterface: FileManagerProtocol {
         }
     }
 
+    /// Clears the entire cache directory
     func clearDirectory() async throws {
         let fileURLs = try fileManager.contentsOfDirectory(
             at: cacheDirectory,
