@@ -12,14 +12,41 @@ actor ImageCache: ImageCacheProtocol {
 
     static let shared = ImageCache()
 
-    private let cache = NSCache<NSString, UIImage>()
-    private init() {}
+    private let fileManager: FileManagerProtocol
 
-    func getImage(forKey key: String) -> UIImage? {
-        cache.object(forKey: key as NSString)
+    init(fileManager: FileManagerProtocol = FileManagerInterface.shared) {
+        self.fileManager = fileManager
     }
 
-    func setImage(_ image: UIImage, forKey key: String) {
-        cache.setObject(image, forKey: key as NSString)
+    func getImage(forKey key: String) async -> UIImage? {
+        if let data = try? await fileManager.getData(forKey: key), let image = UIImage(data: data) {
+            return image
+        }
+        #if DEBUG
+        print("!!!!!!!!!! Reading Image from the cache failed for \(key)")
+        #endif
+        return nil
+    }
+
+    func setImage(_ image: UIImage, forKey key: String) async {
+        if let data = image.pngData() {
+            do {
+                try await fileManager.setData(data, forKey: key)
+            } catch {
+                #if DEBUG
+                print("Saving Image to the cache failed \(error)")
+                #endif
+            }
+        }
+    }
+
+    func clearCache() async {
+        do {
+            try await fileManager.clearDirectory()
+        } catch {
+            #if DEBUG
+            print("Failed to clear cache: \(error)")
+            #endif
+        }
     }
 }

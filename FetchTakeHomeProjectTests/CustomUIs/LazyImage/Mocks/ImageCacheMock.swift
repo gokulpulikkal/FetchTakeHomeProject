@@ -28,4 +28,8 @@ actor ImageCacheMock: ImageCacheProtocol {
     func setImage(_ image: UIImage, forKey key: String) async {
         cache[key] = image
     }
+    
+    func clearCache() async {
+        cache = [:]
+    }
 }
