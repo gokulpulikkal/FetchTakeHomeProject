@@ -13,7 +13,7 @@ import SwiftUI
 ///   - Parameters:
 ///      - Content: The main viewBuilder closure that will get the Image object once loaded successfully
 ///      - Placeholder: View that is shown when the Image is being loaded or failed to load
-struct LazyImage<Content: View, Placeholder: View>: View {
+public struct LazyImage<Content: View, Placeholder: View>: View {
 
     // MARK: - Properties
 
@@ -24,7 +24,7 @@ struct LazyImage<Content: View, Placeholder: View>: View {
 
     // MARK: - Initialization
 
-    init(
+    public init(
         url: String?,
         @ViewBuilder content: @escaping (Image) -> Content,
         @ViewBuilder placeholder: @escaping () -> Placeholder
@@ -36,7 +36,7 @@ struct LazyImage<Content: View, Placeholder: View>: View {
 
     // MARK: - Body
 
-    var body: some View {
+    public var body: some View {
         Group {
             switch viewModel.loadStatus {
             case .loading:

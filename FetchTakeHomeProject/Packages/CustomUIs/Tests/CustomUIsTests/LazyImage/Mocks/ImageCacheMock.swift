@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-@testable import FetchTakeHomeProject
+@testable import CustomUIs
 
 actor ImageCacheMock: ImageCacheProtocol {
 
@@ -15,14 +15,8 @@ actor ImageCacheMock: ImageCacheProtocol {
 
     /// Added purely for the testing purpose
     /// used when there is need of checking that the image is coming from cache
-    nonisolated(unsafe) var handler: (() -> Void)?
 
     func getImage(forKey key: String) async -> UIImage? {
-        defer {
-            if let handler {
-                handler()
-            }
-        }
         return cache[key]
     }
 

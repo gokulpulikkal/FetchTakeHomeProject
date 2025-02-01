@@ -6,7 +6,7 @@
 //
 
 import Foundation
-@testable import FetchTakeHomeProject
+@testable import CustomUIs
 
 actor FileManagerInterfaceMock: FileManagerProtocol {
 

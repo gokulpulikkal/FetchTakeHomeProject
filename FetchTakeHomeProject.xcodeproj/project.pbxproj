@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4B47728A2D4EB99A00FADDF9 /* Core in Frameworks */ = {isa = PBXBuildFile; productRef = 4B4772892D4EB99A00FADDF9 /* Core */; };
+		4B4774112D4EC81C00FADDF9 /* CustomUIs in Frameworks */ = {isa = PBXBuildFile; productRef = 4B4774102D4EC81C00FADDF9 /* CustomUIs */; };
 		4BAFD9932D4EACA600E5A84E /* NetworkLayer in Frameworks */ = {isa = PBXBuildFile; productRef = 4BAFD9922D4EACA600E5A84E /* NetworkLayer */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Packages/Core,
+				Packages/CustomUIs,
 				Packages/NetworkLayer,
 			);
 			target = 4B88525C2D4C31EB00C4BA60 /* FetchTakeHomeProject */;
@@ -73,6 +75,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4BAFD9932D4EACA600E5A84E /* NetworkLayer in Frameworks */,
+				4B4774112D4EC81C00FADDF9 /* CustomUIs in Frameworks */,
 				4B47728A2D4EB99A00FADDF9 /* Core in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -145,6 +148,7 @@
 			packageProductDependencies = (
 				4BAFD9922D4EACA600E5A84E /* NetworkLayer */,
 				4B4772892D4EB99A00FADDF9 /* Core */,
+				4B4774102D4EC81C00FADDF9 /* CustomUIs */,
 			);
 			productName = FetchTakeHomeProject;
 			productReference = 4B88525D2D4C31EB00C4BA60 /* FetchTakeHomeProject.app */;
@@ -600,6 +604,10 @@
 		4B4772892D4EB99A00FADDF9 /* Core */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Core;
+		};
+		4B4774102D4EC81C00FADDF9 /* CustomUIs */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = CustomUIs;
 		};
 		4BAFD9922D4EACA600E5A84E /* NetworkLayer */ = {
 			isa = XCSwiftPackageProductDependency;

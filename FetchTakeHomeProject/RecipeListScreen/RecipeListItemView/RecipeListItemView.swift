@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CustomUIs
 
 @MainActor
 /// A view that will be used as a single item in the list view that shows a list of recipes

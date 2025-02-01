@@ -7,8 +7,9 @@
 
 import Testing
 import UIKit
-@testable import FetchTakeHomeProject
+@testable import CustomUIs
 
+@Suite(.serialized)
 struct ImageCacheTests {
 
     let imageCache: ImageCacheProtocol

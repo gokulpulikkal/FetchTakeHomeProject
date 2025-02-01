@@ -11,12 +11,12 @@ import UIKit
 /// A Image cache implementation using File systems
 /// It's an actor so ensures the thread safe access
 /// Also it is implemented as a singleton so only one instance exists throughout the entire app
-actor ImageCache: ImageCacheProtocol {
+public actor ImageCache: ImageCacheProtocol {
 
     // MARK: -  properties
 
     /// singleton instance accessor
-    static let shared = ImageCache()
+    public static let shared = ImageCache()
 
     /// A file system instance. This can be used for writing and reading from the file system
     private let fileManager: FileManagerProtocol
@@ -34,7 +34,7 @@ actor ImageCache: ImageCacheProtocol {
     ///     - key: A string for which the cache has to be searched for
     ///  - Returns:
     ///     - UIImage if the image data is found in the cache
-    func getImage(forKey key: String) async -> UIImage? {
+    public func getImage(forKey key: String) async -> UIImage? {
         do {
             let data = try await fileManager.getData(forKey: key)
             if let image = UIImage(data: data) {
@@ -52,7 +52,7 @@ actor ImageCache: ImageCacheProtocol {
     /// - Parameters:
     ///     - image: An image to save in the cache
     ///     - key: A string for which the image has to saved in the cache
-    func setImage(_ image: UIImage, forKey key: String) async {
+    public func setImage(_ image: UIImage, forKey key: String) async {
         if let data = image.pngData() {
             do {
                 try await fileManager.setData(data, forKey: key)
@@ -65,7 +65,7 @@ actor ImageCache: ImageCacheProtocol {
     }
 
     /// A function that will clear all the data in the cache
-    func clearCache() async {
+    public func clearCache() async {
         do {
             try await fileManager.clearDirectory()
         } catch {

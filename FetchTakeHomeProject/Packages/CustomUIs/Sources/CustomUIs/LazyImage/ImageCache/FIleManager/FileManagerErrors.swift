@@ -8,7 +8,7 @@
 import Foundation
 
 /// A type that specifies different errors that can be thrown by the file manager
-enum FileManagerErrors: Error {
+public enum FileManagerErrors: Error {
 
     /// Case when the file manager fails to create cache directory
     case cacheDirectoryCreationFailed

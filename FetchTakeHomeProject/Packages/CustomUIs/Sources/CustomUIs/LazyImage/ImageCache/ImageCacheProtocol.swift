@@ -10,7 +10,7 @@ import UIKit
 
 /// Image cache protocol that defines necessary function needed for an image cache
 /// This should be accessible parallel from different threads, marking as sendable
-protocol ImageCacheProtocol: Sendable {
+public protocol ImageCacheProtocol: Sendable {
 
     /// Returns an image if that exists in the cache for the give key
     func getImage(forKey key: String) async -> UIImage?
