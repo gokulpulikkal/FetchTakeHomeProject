@@ -26,21 +26,21 @@
     },
     {
       "target" : {
-        "containerPath" : "container:FetchTakeHomeProject\/Packages\/Core",
+        "containerPath" : "container:Packages\/Core",
         "identifier" : "CoreTests",
         "name" : "CoreTests"
       }
     },
     {
       "target" : {
-        "containerPath" : "container:FetchTakeHomeProject\/Packages\/CustomUIs",
+        "containerPath" : "container:Packages\/CustomUIs",
         "identifier" : "CustomUIsTests",
         "name" : "CustomUIsTests"
       }
     },
     {
       "target" : {
-        "containerPath" : "container:FetchTakeHomeProject\/Packages\/NetworkLayer",
+        "containerPath" : "container:Packages\/NetworkLayer",
         "identifier" : "NetworkLayerTests",
         "name" : "NetworkLayerTests"
       }

@@ -30,30 +30,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4B38C6412D4EE5CA0047D6AE /* Core */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = Core; sourceTree = "<group>"; };
+		4B38C6422D4EE5CA0047D6AE /* CustomUIs */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = CustomUIs; sourceTree = "<group>"; };
+		4B38C6432D4EE5CA0047D6AE /* NetworkLayer */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = NetworkLayer; sourceTree = "<group>"; };
 		4B88525D2D4C31EB00C4BA60 /* FetchTakeHomeProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FetchTakeHomeProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B88526D2D4C31EC00C4BA60 /* FetchTakeHomeProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchTakeHomeProjectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8852772D4C31EC00C4BA60 /* FetchTakeHomeProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FetchTakeHomeProjectUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4B8854B62D4D45FA00C4BA60 /* FetchTakeHomeProject.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = FetchTakeHomeProject.xctestplan; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		4BAFD9952D4EACE800E5A84E /* Exceptions for "FetchTakeHomeProject" folder in "FetchTakeHomeProject" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Packages/Core,
-				Packages/CustomUIs,
-				Packages/NetworkLayer,
-			);
-			target = 4B88525C2D4C31EB00C4BA60 /* FetchTakeHomeProject */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		4B88525F2D4C31EB00C4BA60 /* FetchTakeHomeProject */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				4BAFD9952D4EACE800E5A84E /* Exceptions for "FetchTakeHomeProject" folder in "FetchTakeHomeProject" target */,
-			);
 			path = FetchTakeHomeProject;
 			sourceTree = "<group>";
 		};
@@ -97,6 +85,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B38C6442D4EE5CA0047D6AE /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				4B38C6412D4EE5CA0047D6AE /* Core */,
+				4B38C6422D4EE5CA0047D6AE /* CustomUIs */,
+				4B38C6432D4EE5CA0047D6AE /* NetworkLayer */,
+			);
+			path = Packages;
+			sourceTree = "<group>";
+		};
 		4B4772882D4EB99A00FADDF9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +111,7 @@
 				4B88527A2D4C31EC00C4BA60 /* FetchTakeHomeProjectUITests */,
 				4B4772882D4EB99A00FADDF9 /* Frameworks */,
 				4B88525E2D4C31EB00C4BA60 /* Products */,
+				4B38C6442D4EE5CA0047D6AE /* Packages */,
 			);
 			sourceTree = "<group>";
 		};
