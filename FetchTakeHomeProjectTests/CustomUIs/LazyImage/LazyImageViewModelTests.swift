@@ -91,5 +91,14 @@ final class LazyImageViewModelTests: XCTestCase {
         
     }
     
+    func testImageLoadingError() async throws {
+        XCTAssert(viewModel.loadStatus == .loading)
+        let testURL = "https://example.com/image.png"
+        
+        await viewModel.loadImage(url: testURL)
+        
+        XCTAssertTrue(viewModel.loadStatus == .failed(DownloadErrors.noResponse))
+    }
+    
 
 }
