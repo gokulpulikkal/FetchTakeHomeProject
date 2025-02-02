@@ -8,8 +8,10 @@
 import Foundation
 import NetworkLayer
 
+/// A type that specifies all the needed fields for URL request creation for the Recipes end point API call
 enum RecipesRepositoryRequests: RequestDataProtocol {
 
+    /// for the end point where all recipes is returned from the API
     case allRecipes
 
     var method: RequestMethod {

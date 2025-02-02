@@ -7,7 +7,10 @@
 
 import Foundation
 
+/// A decodable model for the  Recipe data coming from the API endpoint
 struct Recipe: Identifiable, Decodable, Equatable {
+    
+    /// ID that makes this identifiable
     var id: String {
         uuid
     }
