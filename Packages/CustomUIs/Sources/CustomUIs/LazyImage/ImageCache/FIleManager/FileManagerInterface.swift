@@ -20,9 +20,9 @@ actor FileManagerInterface: FileManagerProtocol {
 
     // MARK: - Initializer
 
-    init(cacheDirectory: String = "ImageCache") {
+    init(cacheDirectoryName: String = "ImageCache") {
         let paths = fileManager.urls(for: .cachesDirectory, in: .userDomainMask)
-        self.cacheDirectory = paths[0].appendingPathComponent(cacheDirectory)
+        self.cacheDirectory = paths[0].appendingPathComponent(cacheDirectoryName)
     }
 
     // MARK: - Methods

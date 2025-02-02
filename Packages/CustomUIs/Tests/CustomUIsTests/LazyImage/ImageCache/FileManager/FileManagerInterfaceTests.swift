@@ -10,7 +10,7 @@ import Testing
 
 struct FileManagerInterfaceTests {
 
-    let fileManagerInterface: FileManagerProtocol = FileManagerInterface(cacheDirectory: "TestDirectory")
+    let fileManagerInterface: FileManagerProtocol = FileManagerInterface(cacheDirectoryName: "TestDirectory")
     
     func clearTheTestDirectoryIfExists() async {
         do {
