@@ -35,11 +35,19 @@ actor FileManagerInterface: FileManagerProtocol {
             throw FileManagerErrors.fileReadFailed
         }
 
-        let fileURL = URL(fileURLWithPath: safeFileName, relativeTo: cacheDirectory).appendingPathExtension(key)
+        let fileURL = cacheDirectory.appendingPathComponent(safeFileName)
+
         do {
             return try Data(contentsOf: fileURL)
         } catch {
-            throw FileManagerErrors.fileDoesNotExist
+            #if DEBUG
+            print("Cache MISS: Failed to read data from file")
+            #endif
+            if (error as NSError).code == NSFileReadNoSuchFileError {
+                throw FileManagerErrors.fileDoesNotExist
+            } else {
+                throw FileManagerErrors.fileReadFailed
+            }
         }
     }
 
@@ -47,16 +55,29 @@ actor FileManagerInterface: FileManagerProtocol {
     /// The key is encoded before using as file name to write for. This is done as the key can be long or contains some
     /// characters not suited for using as file name
     func setData(_ data: Data, forKey key: String) async throws {
+        if !fileManager.fileExists(atPath: cacheDirectory.path) {
+            do {
+                try fileManager.createDirectory(
+                    at: cacheDirectory,
+                    withIntermediateDirectories: true,
+                    attributes: nil
+                )
+            } catch {
+                throw FileManagerErrors.fileWriteFailed
+            }
+        }
+
         guard let safeFileName = key.data(using: .utf8)?.base64EncodedString() else {
             throw FileManagerErrors.fileWriteFailed
         }
 
-        let fileURL = cacheDirectory.appendingPathComponent(safeFileName, isDirectory: false)
+        let fileURL = cacheDirectory.appendingPathComponent(safeFileName)
+
         do {
-            try data.write(to: fileURL)
+            try data.write(to: fileURL, options: .atomic)
         } catch {
             #if DEBUG
-            print("The image caching write failed \(error)")
+            print("Failed to write data to file: \(error)")
             #endif
             throw FileManagerErrors.fileWriteFailed
         }
