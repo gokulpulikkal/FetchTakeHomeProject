@@ -17,11 +17,13 @@ struct LazyImageViewModelTest {
     var imageCache: ImageCacheMock
     var fileDownloader: FileDownloaderMock
     var viewModel: LazyImageViewModel
+    var imageGetterUseCase: ImageGetterUseCaseProtocol
 
     init() {
         self.imageCache = ImageCacheMock()
         self.fileDownloader = FileDownloaderMock()
-        self.viewModel = LazyImageViewModel(imageCache: imageCache, imageDownloader: fileDownloader)
+        self.imageGetterUseCase = ImageGetterUseCase(imageCache: imageCache, imageDownloader: fileDownloader)
+        self.viewModel = LazyImageViewModel(imageGetterUseCase: imageGetterUseCase)
     }
 
     @Test
